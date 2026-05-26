@@ -3,3 +3,7 @@ dist/
 .DS_Store
 *.log
 
+# Original textbook scans used only as OCR source for vocabulary decks.
+# Kept locally for reference; not redistributed via the repo.
+docs/images/words/
+
