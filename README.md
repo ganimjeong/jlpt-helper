@@ -8,24 +8,21 @@ https://ganimjeong.github.io/jlpt-helper/
 
 ## Screenshots
 
-아래 이미지는 README용 자리입니다. 실제 화면을 캡처한 뒤 같은 경로로 이미지를 추가하면 GitHub에서 바로 표시됩니다.
-
-| 단어장 목록 | 학습 카드 |
+| 단어장 목록 | 단어장 목록 (다 외운 경우) |
 | --- | --- |
-| ![단어장 목록 화면](docs/images/deck-list.png) | ![학습 카드 화면](docs/images/study-card.png) |
+| ![단어장 목록 화면](docs/images/ui-screenshots/1.단어장목록.PNG) | ![단어장 목록 화면 (다 외운 경우)](docs/images/ui-screenshots/5.다외운경우의-단어장목록ui.PNG) |
 
-| 단어장 보기 | 한 바퀴 완료 |
+| 학습 카드 (1/4 단계) | 학습 카드 (4/4 단계) |
 | --- | --- |
-| ![단어장 보기 화면](docs/images/deck-detail.png) | ![한 바퀴 완료 화면](docs/images/session-complete.png) |
+| ![학습 카드 1단계](docs/images/ui-screenshots/2-1.단어카드1%3A4.PNG) | ![학습 카드 4단계](docs/images/ui-screenshots/2-2.단어카드4%3A4.PNG) |
 
-권장 이미지 경로:
+| 한 바퀴 완료 | 한 바퀴 완료 (다 외운 경우) |
+| --- | --- |
+| ![한 바퀴 완료 화면](docs/images/ui-screenshots/3-1.한바퀴완료.PNG) | ![한 바퀴 완료 화면 (다 외운 경우)](docs/images/ui-screenshots/3-2.한바퀴완료-다외운경우.PNG) |
 
-```text
-docs/images/deck-list.png
-docs/images/study-card.png
-docs/images/deck-detail.png
-docs/images/session-complete.png
-```
+| 단어장 보기 |
+| --- |
+| ![단어장 보기 화면](docs/images/ui-screenshots/4.단어장보기.PNG) |
 
 ## Features
 
