@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { VocabularyWord } from "../data/decks";
+import type { QuizStyle, VocabularyWord } from "../data/decks";
 
 type WordCardProps = {
   word: VocabularyWord;
+  quizStyle?: QuizStyle;
   onResolve: (memorized: boolean) => void;
 };
 
@@ -15,7 +16,7 @@ const stepLabels: Record<RevealStep, string> = {
   meaning: "뜻"
 };
 
-export function WordCard({ word, onResolve }: WordCardProps) {
+export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardProps) {
   const [stepIndex, setStepIndex] = useState(0);
   const [pointerStartX, setPointerStartX] = useState<number | null>(null);
   const [dragX, setDragX] = useState(0);
@@ -25,14 +26,22 @@ export function WordCard({ word, onResolve }: WordCardProps) {
   );
   const draggedRef = useRef(false);
 
+  const hasKana = Boolean(word.kana && word.kana !== word.kanji);
+  // 表記 (writing) decks mimic JLPT 問題2: the kana reading is the prompt and
+  // the kanji is revealed as the answer, so kana comes first.
+  const isWriting = quizStyle === "writing" && hasKana;
+
   const steps = useMemo<RevealStep[]>(() => {
+    if (isWriting) {
+      return ["kana", "kanji", "example", "meaning"];
+    }
     const next: RevealStep[] = ["kanji"];
-    if (word.kana && word.kana !== word.kanji) {
+    if (hasKana) {
       next.push("kana");
     }
     next.push("example", "meaning");
     return next;
-  }, [word]);
+  }, [isWriting, hasKana]);
 
   const currentStep = steps[stepIndex];
   const isFinalStep = stepIndex === steps.length - 1;
@@ -164,11 +173,23 @@ export function WordCard({ word, onResolve }: WordCardProps) {
         </span>
 
         <span className="card-content" key={`${word.id}-${currentStep}`}>
-          <strong className="word-kanji">{word.kanji}</strong>
-
-          {steps.includes("kana") && currentStep !== "kanji" ? (
-            <span className="word-kana">{word.kana}</span>
-          ) : null}
+          {isWriting ? (
+            stepIndex >= steps.indexOf("kanji") ? (
+              <>
+                <strong className="word-kanji">{word.kanji}</strong>
+                <span className="word-kana">{word.kana}</span>
+              </>
+            ) : (
+              <strong className="word-kanji">{word.kana}</strong>
+            )
+          ) : (
+            <>
+              <strong className="word-kanji">{word.kanji}</strong>
+              {hasKana && currentStep !== "kanji" ? (
+                <span className="word-kana">{word.kana}</span>
+              ) : null}
+            </>
+          )}
 
           {(currentStep === "example" || currentStep === "meaning") && (
             <span className="example-block">

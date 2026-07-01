@@ -1,5 +1,9 @@
 export type JlptLevel = "N5" | "N4" | "N3" | "N2" | "N1" | "unknown";
 
+// "reading" (漢字読み): show kanji first, reveal the reading — JLPT 問題1.
+// "writing" (表記): show the kana reading first, reveal the kanji — JLPT 問題2.
+export type QuizStyle = "reading" | "writing";
+
 export type VocabularyWord = {
   id: string;
   kanji: string;
@@ -16,6 +20,7 @@ export type VocabularyDeck = {
   description?: string;
   sourceBatch?: string;
   jlptLevel?: JlptLevel;
+  quizStyle?: QuizStyle;
   createdAt: string;
   updatedAt: string;
   words: VocabularyWord[];
@@ -2802,6 +2807,7 @@ export const decks: VocabularyDeck[] = [
     description: "2023년부터 2016년까지 연도별 한자읽기 기출어휘.",
     sourceBatch: "kanji-reading-past-2026-07-01",
     jlptLevel: "N2",
+    quizStyle: "reading",
     createdAt: "2026-07-01",
     updatedAt: "2026-07-01",
     words: [
@@ -2895,6 +2901,7 @@ export const decks: VocabularyDeck[] = [
     description: "2023년부터 2016년까지 연도별 한자표기 기출어휘.",
     sourceBatch: "kanji-writing-past-2026-07-01",
     jlptLevel: "N2",
+    quizStyle: "writing",
     createdAt: "2026-07-01",
     updatedAt: "2026-07-01",
     words: [
