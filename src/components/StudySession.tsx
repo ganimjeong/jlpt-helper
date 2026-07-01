@@ -66,7 +66,11 @@ export function StudySession({
         </span>
       </header>
 
-      <WordCard word={currentWord} onResolve={resolveCurrent} />
+      <WordCard
+        word={currentWord}
+        quizStyle={deck.quizStyle}
+        onResolve={resolveCurrent}
+      />
     </main>
   );
 }
