@@ -438,6 +438,28 @@ button:disabled,
   font-weight: 950;
 }
 
+.synonym-block {
+  display: grid;
+  justify-items: center;
+  max-width: 24rem;
+  gap: 5px;
+}
+
+.word-synonym {
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  color: #1c4f8a;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.synonym-block small {
+  color: #65706a;
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
 .swipe-hints {
   display: flex;
   justify-content: space-between;

@@ -2,15 +2,19 @@ export type JlptLevel = "N5" | "N4" | "N3" | "N2" | "N1" | "unknown";
 
 // "reading" (漢字読み): show kanji first, reveal the reading — JLPT 問題1.
 // "writing" (表記): show the kana reading first, reveal the kanji — JLPT 問題2.
-export type QuizStyle = "reading" | "writing";
+// "synonym" (言い換え類義): show the word, reveal a near-synonym — JLPT 問題5.
+export type QuizStyle = "reading" | "writing" | "synonym";
 
 export type VocabularyWord = {
   id: string;
   kanji: string;
   kana?: string;
   meaningKo: string;
-  exampleJa: string;
+  exampleJa?: string;
   exampleKo?: string;
+  // 言い換え類義 (synonym) decks: a near-synonym expression and its Korean gloss.
+  synonymJa?: string;
+  synonymKo?: string;
   tags?: string[];
 };
 
@@ -3185,6 +3189,175 @@ export const decks: VocabularyDeck[] = [
       { id: "shokku-2016", kanji: "ショック", meaningKo: "쇼크, 충격", exampleJa: "その 知らせに ショックを 受けた。", exampleKo: "그 소식에 충격을 받았다.", tags: ["2016"] },
       { id: "nadaraka-2016", kanji: "なだらか", meaningKo: "경사가 완만함", exampleJa: "なだらかな 坂を 登る。", exampleKo: "완만한 언덕을 오른다.", tags: ["2016"] },
       { id: "fukyuu-2016", kanji: "普及", kana: "ふきゅう", meaningKo: "보급", exampleJa: "スマホが 急速に 普及した。", exampleKo: "스마트폰이 급속히 보급되었다.", tags: ["2016"] }
+    ]
+  },
+  {
+    id: "synonym-past-2016-2023",
+    title: "유의표현2023~2016",
+    description: "연도별 유의표현(言い換え類義) 기출어휘. 단어와 유의어를 짝지어 학습. (2023·2022 앞부분은 미수록)",
+    sourceBatch: "synonym-past-2026-07-02",
+    jlptLevel: "N2",
+    quizStyle: "synonym",
+    createdAt: "2026-07-02",
+    updatedAt: "2026-07-02",
+    words: [
+      { id: "detarame-2022s", kanji: "でたらめ", meaningKo: "엉터리임, 되는 대로임", synonymJa: "うそ", synonymKo: "거짓말", tags: ["2022"] },
+      { id: "togatteiru-2022s", kanji: "とがっている", meaningKo: "뾰족하다, 예민하다", synonymJa: "細くなっている", synonymKo: "좁다, 가늘다, 예민하다", tags: ["2022"] },
+
+      { id: "annojou-2021s", kanji: "案の定", kana: "あんのじょう", meaningKo: "예상대로, 아니나 다를까", synonymJa: "やっぱり", synonymKo: "역시", tags: ["2021"] },
+      { id: "izen-2021s", kanji: "依然", kana: "いぜん", meaningKo: "여전히", synonymJa: "まだ", synonymKo: "아직", tags: ["2021"] },
+      { id: "kakasenai-2021s", kanji: "欠かせない", kana: "かかせない", meaningKo: "빼놓을 수 없다", synonymJa: "ないと困る", synonymKo: "없으면 곤란하다", tags: ["2021"] },
+      { id: "kurumu-2021s", kanji: "くるむ", meaningKo: "감싸다, 둘러싸다", synonymJa: "包む", synonymKo: "싸다, 포장하다", tags: ["2021"] },
+      { id: "sashizu-2021s", kanji: "指図", kana: "さしず", meaningKo: "지시, 지휘", synonymJa: "命令", synonymKo: "명령", tags: ["2021"] },
+      { id: "shigototorikakaru-2021s", kanji: "仕事にとりかかる", kana: "しごとにとりかかる", meaningKo: "일에 착수하다", synonymJa: "仕事をはじめる", synonymKo: "일을 시작하다", tags: ["2021"] },
+      { id: "shitsubou-2021s", kanji: "失望した", kana: "しつぼうした", meaningKo: "실망했다", synonymJa: "がっかりした", synonymKo: "낙담했다, 실망했다", tags: ["2021"] },
+      { id: "hitogara-2021s", kanji: "人柄", kana: "ひとがら", meaningKo: "인품, 성품", synonymJa: "性格", synonymKo: "성격", tags: ["2021"] },
+      { id: "moyorino-2021s", kanji: "最寄の", kana: "もよりの", meaningKo: "근처의", synonymJa: "一番近い", synonymKo: "가장 가까운", tags: ["2021"] },
+      { id: "rentaru-2021s", kanji: "レンタルする", meaningKo: "대여하다", synonymJa: "借りる", synonymKo: "빌리다", tags: ["2021"] },
+
+      { id: "ijiru-2020s", kanji: "いじる", meaningKo: "만지다", synonymJa: "触る", synonymKo: "만지다, 닿다", tags: ["2020"] },
+      { id: "gaido-2020s", kanji: "ガイドして", meaningKo: "안내해", synonymJa: "案内して", synonymKo: "안내해", tags: ["2020"] },
+      { id: "shuujitsu-2020s", kanji: "終日", kana: "しゅうじつ", meaningKo: "종일", synonymJa: "一日中", synonymKo: "하루 종일", tags: ["2020"] },
+      { id: "shinkenni-2020s", kanji: "真剣に", kana: "しんけんに", meaningKo: "진지하게", synonymJa: "まじめに", synonymKo: "성실하게", tags: ["2020"] },
+      { id: "mareda-2020s", kanji: "まれだ", meaningKo: "드물다", synonymJa: "あまりいない", synonymKo: "드물다, 별로 없다", tags: ["2020"] },
+
+      { id: "issou-2019s", kanji: "一層", kana: "いっそう", meaningKo: "한층", synonymJa: "もっと", synonymKo: "더욱, 더", tags: ["2019"] },
+      { id: "ochikonda-2019s", kanji: "落ち込んだ", kana: "おちこんだ", meaningKo: "기가 죽었다", synonymJa: "がっかりした", synonymKo: "낙담했다, 실망했다", tags: ["2019"] },
+      { id: "kakaritsuke-2019s", kanji: "かかりつけの", meaningKo: "늘 같은 의사에게 진료 받는", synonymJa: "いつも行く", synonymKo: "늘 가는", tags: ["2019"] },
+      { id: "sadameru-2019s", kanji: "定める", kana: "さだめる", meaningKo: "정하다, 결정하다", synonymJa: "決める", synonymKo: "정하다", tags: ["2019"] },
+      { id: "seiippai-2019s", kanji: "精一杯", kana: "せいいっぱい", meaningKo: "힘껏, 있는 힘을 다해", synonymJa: "一生懸命", synonymKo: "열심히", tags: ["2019"] },
+      { id: "doujou-2019s", kanji: "同情した", kana: "どうじょうした", meaningKo: "동정했다", synonymJa: "かわいそうだと思った", synonymKo: "불쌍하다고 생각했다", tags: ["2019"] },
+      { id: "douyou-2019s", kanji: "動揺した", kana: "どうようした", meaningKo: "동요했다", synonymJa: "不安になった", synonymKo: "불안해졌다", tags: ["2019"] },
+      { id: "haado-2019s", kanji: "ハードだ", meaningKo: "힘들다", synonymJa: "大変だ", synonymKo: "힘들다", tags: ["2019"] },
+      { id: "hikikaesu-2019s", kanji: "引き返す", kana: "ひきかえす", meaningKo: "되돌아가다", synonymJa: "戻る", synonymKo: "돌아가다", tags: ["2019"] },
+      { id: "bussou-2019s", kanji: "物騒になってきた", kana: "ぶっそうになってきた", meaningKo: "위험해졌다, 뒤숭숭해졌다", synonymJa: "安全じゃなくなってきた", synonymKo: "안전하지 않게 되었다", tags: ["2019"] },
+
+      { id: "ateru-2018s", kanji: "当てる", kana: "あてる", meaningKo: "맞추다", synonymJa: "ぶつける", synonymKo: "부딪치다, 던져서 맞추다", tags: ["2018"] },
+      { id: "awarena-2018s", kanji: "あわれな", meaningKo: "불쌍한, 가여운", synonymJa: "かわいそうな", synonymKo: "불쌍한", tags: ["2018"] },
+      { id: "itten-2018s", kanji: "一転した", kana: "いってんした", meaningKo: "완전히 바뀌었다", synonymJa: "すっかり変わった", synonymKo: "완전히 바뀌었다", tags: ["2018"] },
+      { id: "utsumuite-2018s", kanji: "うつむいて", meaningKo: "고개를 숙이고", synonymJa: "下を向いて", synonymKo: "아래를 향하고", tags: ["2018"] },
+      { id: "kudoi-2018s", kanji: "くどい", meaningKo: "장황하다, 지긋지긋하다", synonymJa: "しつこい", synonymKo: "집요하다, 끈질기다", tags: ["2018"] },
+      { id: "jitabata-2018s", kanji: "じたばたしても", meaningKo: "버둥버둥대도, 발버둥쳐도", synonymJa: "あわてても", synonymKo: "허둥대도", tags: ["2018"] },
+      { id: "tekunikku-2018s", kanji: "テクニック", meaningKo: "테크닉, 기술", synonymJa: "技術", synonymKo: "기술", tags: ["2018"] },
+      { id: "toubun-2018s", kanji: "当分", kana: "とうぶん", meaningKo: "당분간", synonymJa: "しばらく", synonymKo: "잠시, 당분간", tags: ["2018"] },
+      { id: "youjin-2018s", kanji: "用心する", kana: "ようじんする", meaningKo: "조심하다, 주의하다", synonymJa: "気をつける", synonymKo: "조심하다, 주의하다", tags: ["2018"] },
+      { id: "rikouna-2018s", kanji: "利口な", kana: "りこうな", meaningKo: "영리한", synonymJa: "頭がいい", synonymKo: "머리가 좋은", tags: ["2018"] },
+
+      { id: "ayamari-2017s", kanji: "誤り", kana: "あやまり", meaningKo: "잘못, 틀림, 실수", synonymJa: "間違っているところ", synonymKo: "잘못된 부분", tags: ["2017"] },
+      { id: "okubyou-2017s", kanji: "臆病だ", kana: "おくびょうだ", meaningKo: "겁쟁이다, 겁이 많다", synonymJa: "何でも怖がる", synonymKo: "무엇이든 무서워하다", tags: ["2017"] },
+      { id: "kajou-2017s", kanji: "過剰である", kana: "かじょうである", meaningKo: "과잉이다", synonymJa: "多すぎる", synonymKo: "너무 많다", tags: ["2017"] },
+      { id: "kattena-2017s", kanji: "勝手な", kana: "かってな", meaningKo: "제멋대로인", synonymJa: "わがままな", synonymKo: "제멋대로인", tags: ["2017"] },
+      { id: "kioku-2017s", kanji: "記憶している", kana: "きおくしている", meaningKo: "기억하고 있다", synonymJa: "覚えている", synonymKo: "기억하고 있다", tags: ["2017"] },
+      { id: "tokkuni-2017s", kanji: "とっくに", meaningKo: "훨씬 전에, 벌써", synonymJa: "ずっと前に", synonymKo: "훨씬 전에", tags: ["2017"] },
+      { id: "fuhei-2017s", kanji: "不平", kana: "ふへい", meaningKo: "불평", synonymJa: "文句", synonymKo: "불평, 불만", tags: ["2017"] },
+      { id: "marena-2017s", kanji: "まれな", meaningKo: "드문", synonymJa: "ほとんどない", synonymKo: "드문, 거의 없는", tags: ["2017"] },
+      { id: "mukatsuku-2017s", kanji: "むかつく", meaningKo: "화가 치밀다, 울컥하다", synonymJa: "怒る", synonymKo: "화나다", tags: ["2017"] },
+      { id: "yuzuru-2017s", kanji: "ゆずる", meaningKo: "넘겨주다, 양보하다", synonymJa: "あげる", synonymKo: "주다", tags: ["2017"] },
+
+      { id: "ikinuki-2016s", kanji: "息抜きする", kana: "いきぬきする", meaningKo: "잠시 쉬다, 숨을 돌리다", synonymJa: "休む", synonymKo: "쉬다", tags: ["2016"] },
+      { id: "jikani-2016s", kanji: "じかに", meaningKo: "직접", synonymJa: "直接", synonymKo: "직접", tags: ["2016"] },
+      { id: "shoutotsu-2016s", kanji: "衝突する", kana: "しょうとつする", meaningKo: "충돌하다", synonymJa: "ぶつかる", synonymKo: "부딪히다", tags: ["2016"] },
+      { id: "tabitabi-2016s", kanji: "たびたび", meaningKo: "여러 번, 자주", synonymJa: "何度も", synonymKo: "몇 번이나", tags: ["2016"] },
+      { id: "chuumoku-2016s", kanji: "注目する", kana: "ちゅうもくする", meaningKo: "주목하다", synonymJa: "関心を持つ", synonymKo: "관심을 갖다", tags: ["2016"] },
+      { id: "tsuiteiru-2016s", kanji: "ついている", meaningKo: "행운이 따르다", synonymJa: "運がいい", synonymKo: "운이 좋다", tags: ["2016"] },
+      { id: "tsuneni-2016s", kanji: "つねに", meaningKo: "늘, 항상", synonymJa: "いつも", synonymKo: "언제나", tags: ["2016"] },
+      { id: "hikyou-2016s", kanji: "ひきょうな", meaningKo: "비겁한", synonymJa: "ずるい", synonymKo: "치사한, 교활한", tags: ["2016"] },
+      { id: "yamuoenai-2016s", kanji: "やむを得ない", kana: "やむをえない", meaningKo: "어쩔 수 없다, 부득이하다", synonymJa: "しかたない", synonymKo: "어쩔 수 없다, 하는 수 없다", tags: ["2016"] },
+      { id: "yukaina-2016s", kanji: "愉快な", kana: "ゆかいな", meaningKo: "유쾌한", synonymJa: "面白い", synonymKo: "재미있는", tags: ["2016"] }
+    ]
+  },
+  {
+    id: "usage-past-2016-2023",
+    title: "용법2023~2016",
+    description: "2023년부터 2016년까지 연도별 용법(用法) 기출어휘.",
+    sourceBatch: "usage-past-2026-07-02",
+    jlptLevel: "N2",
+    quizStyle: "reading",
+    createdAt: "2026-07-02",
+    updatedAt: "2026-07-02",
+    words: [
+      { id: "idai-2023u", kanji: "偉大", kana: "いだい", meaningKo: "위대함", exampleJa: "彼は 偉大な 業績を 残した。", exampleKo: "그는 위대한 업적을 남겼다.", tags: ["2023"] },
+      { id: "zandaka-2023u", kanji: "残高", kana: "ざんだか", meaningKo: "잔고", exampleJa: "口座の 残高を 確認する。", exampleKo: "계좌 잔고를 확인한다.", tags: ["2023"] },
+      { id: "souki-2023u", kanji: "早期", kana: "そうき", meaningKo: "조기", exampleJa: "病気の 早期発見が 大切だ。", exampleKo: "병의 조기 발견이 중요하다.", tags: ["2023"] },
+      { id: "hareru-2023u", kanji: "腫れる", kana: "はれる", meaningKo: "붓다", exampleJa: "足首が 腫れて 痛い。", exampleKo: "발목이 부어서 아프다.", tags: ["2023"] },
+      { id: "kure-2023u", kanji: "暮れ", kana: "くれ", meaningKo: "저녁때, 한 해의 마지막", exampleJa: "年の 暮れは 忙しい。", exampleKo: "연말은 바쁘다.", tags: ["2023"] },
+      { id: "joutatsu-2023u", kanji: "上達", kana: "じょうたつ", meaningKo: "숙달", exampleJa: "練習して 日本語が 上達した。", exampleKo: "연습해서 일본어가 늘었다.", tags: ["2023"] },
+      { id: "zokushutsu-2023u", kanji: "続出", kana: "ぞくしゅつ", meaningKo: "속출", exampleJa: "会場で トラブルが 続出した。", exampleKo: "행사장에서 문제가 속출했다.", tags: ["2023"] },
+      { id: "samatageru-2023u", kanji: "さまたげる", meaningKo: "방해하다, 지장을 주다", exampleJa: "騒音が 睡眠を さまたげる。", exampleKo: "소음이 수면을 방해한다.", tags: ["2023"] },
+      { id: "shirushi-2023u", kanji: "印", kana: "しるし", meaningKo: "표, 표시", exampleJa: "大事な 所に 印を つける。", exampleKo: "중요한 곳에 표시를 한다.", tags: ["2023"] },
+      { id: "haishi-2023u", kanji: "廃止", kana: "はいし", meaningKo: "폐지", exampleJa: "古い 制度を 廃止する。", exampleKo: "오래된 제도를 폐지한다.", tags: ["2023"] },
+
+      { id: "areru-2022u", kanji: "荒れる", kana: "あれる", meaningKo: "거칠어지다, 날뛰다", exampleJa: "海が 荒れて 船が 出せない。", exampleKo: "바다가 거칠어져 배를 낼 수 없다.", tags: ["2022"] },
+      { id: "ganko-2022u", kanji: "頑固", kana: "がんこ", meaningKo: "완고함", exampleJa: "父は 頑固で 意見を 曲げない。", exampleKo: "아버지는 완고해서 의견을 굽히지 않는다.", tags: ["2022"] },
+      { id: "chuudan-2022u", kanji: "中断", kana: "ちゅうだん", meaningKo: "중단", exampleJa: "雨で 試合が 中断した。", exampleKo: "비로 경기가 중단됐다.", tags: ["2022"] },
+      { id: "beteran-2022u", kanji: "ベテラン", meaningKo: "베테랑, 노련한 사람", exampleJa: "彼は この 分野の ベテランだ。", exampleKo: "그는 이 분야의 베테랑이다.", tags: ["2022"] },
+      { id: "uchiawase-2022u", kanji: "打ち合せ", kana: "うちあわせ", meaningKo: "협의, 미리 상의함", exampleJa: "明日の 打ち合せに 出る。", exampleKo: "내일 회의에 참석한다.", tags: ["2022"] },
+      { id: "shoujiru-2022u", kanji: "生じる", kana: "しょうじる", meaningKo: "생기다, 발생하다", exampleJa: "誤解が 生じることも ある。", exampleKo: "오해가 생기는 경우도 있다.", tags: ["2022"] },
+      { id: "nigoru-2022u", kanji: "濁る", kana: "にごる", meaningKo: "탁해지다, 흐려지다", exampleJa: "大雨で 川の 水が 濁った。", exampleKo: "폭우로 강물이 탁해졌다.", tags: ["2022"] },
+      { id: "onkou-2022u", kanji: "温厚", kana: "おんこう", meaningKo: "온화하고 다정함", exampleJa: "彼は 温厚な 人柄だ。", exampleKo: "그는 온화한 성품이다.", tags: ["2022"] },
+      { id: "sedai-2022u", kanji: "世代", kana: "せだい", meaningKo: "세대", exampleJa: "若い 世代の 意見を 聞く。", exampleKo: "젊은 세대의 의견을 듣는다.", tags: ["2022"] },
+      { id: "fukyuu-2022u", kanji: "普及", kana: "ふきゅう", meaningKo: "보급", exampleJa: "スマホが 広く 普及した。", exampleKo: "스마트폰이 널리 보급됐다.", tags: ["2022"] },
+
+      { id: "inyou-2021u", kanji: "引用", kana: "いんよう", meaningKo: "인용", exampleJa: "論文から 一部を 引用する。", exampleKo: "논문에서 일부를 인용한다.", tags: ["2021"] },
+      { id: "keikou-2021u", kanji: "傾向", kana: "けいこう", meaningKo: "경향", exampleJa: "最近 消費が 減る 傾向に ある。", exampleKo: "최근 소비가 줄어드는 경향이 있다.", tags: ["2021"] },
+      { id: "datou-2021u", kanji: "妥当", kana: "だとう", meaningKo: "타당함, 적절함", exampleJa: "その 判断は 妥当だ。", exampleKo: "그 판단은 타당하다.", tags: ["2021"] },
+      { id: "moreru-2021u", kanji: "漏れる", kana: "もれる", meaningKo: "새다, 빠지다", exampleJa: "ガスが 漏れている。", exampleKo: "가스가 새고 있다.", tags: ["2021"] },
+      { id: "kabau-2021u", kanji: "かばう", meaningKo: "감싸다, 비호하다", exampleJa: "友人を かばって うそを ついた。", exampleKo: "친구를 감싸려고 거짓말을 했다.", tags: ["2021"] },
+      { id: "saibai-2021u", kanji: "栽培", kana: "さいばい", meaningKo: "재배", exampleJa: "トマトを 栽培している。", exampleKo: "토마토를 재배하고 있다.", tags: ["2021"] },
+      { id: "tenkai-2021u", kanji: "展開", kana: "てんかい", meaningKo: "전개", exampleJa: "話が 意外な 方向へ 展開した。", exampleKo: "이야기가 뜻밖의 방향으로 전개됐다.", tags: ["2021"] },
+      { id: "kyuugeki-2021u", kanji: "急激", kana: "きゅうげき", meaningKo: "급격함", exampleJa: "気温が 急激に 下がった。", exampleKo: "기온이 급격히 떨어졌다.", tags: ["2021"] },
+      { id: "sassato-2021u", kanji: "さっさと", meaningKo: "어서, 서둘러", exampleJa: "さっさと 仕事を 片づけよう。", exampleKo: "어서 일을 끝내자.", tags: ["2021"] },
+      { id: "hotto-2021u", kanji: "ほっと", meaningKo: "안심하는 모양", exampleJa: "無事だと 聞いて ほっとした。", exampleKo: "무사하다고 듣고 안심했다.", tags: ["2021"] },
+
+      { id: "intai-2020u", kanji: "引退", kana: "いんたい", meaningKo: "은퇴", exampleJa: "選手が 現役を 引退する。", exampleKo: "선수가 현역에서 은퇴한다.", tags: ["2020"] },
+      { id: "kekkan-2020u", kanji: "欠陥", kana: "けっかん", meaningKo: "결함", exampleJa: "製品に 欠陥が 見つかった。", exampleKo: "제품에서 결함이 발견됐다.", tags: ["2020"] },
+      { id: "uchiakeru-2020u", kanji: "打ち明ける", kana: "うちあける", meaningKo: "밝히다, 털어놓다", exampleJa: "悩みを 友人に 打ち明けた。", exampleKo: "고민을 친구에게 털어놓았다.", tags: ["2020"] },
+      { id: "shoki-2020u", kanji: "初期", kana: "しょき", meaningKo: "초기", exampleJa: "病気は 初期に 治療するのが よい。", exampleKo: "병은 초기에 치료하는 게 좋다.", tags: ["2020"] },
+      { id: "gisshiri-2020u", kanji: "ぎっしり", meaningKo: "가득, 잔뜩, 빽빽이", exampleJa: "予定が ぎっしり 詰まっている。", exampleKo: "일정이 빽빽이 차 있다.", tags: ["2020"] },
+
+      { id: "shimiru-2019u", kanji: "しみる", meaningKo: "배다, 스며들다", exampleJa: "汗が シャツに しみる。", exampleKo: "땀이 셔츠에 밴다.", tags: ["2019"] },
+      { id: "sokuzani-2019u", kanji: "即座に", kana: "そくざに", meaningKo: "즉각, 당장", exampleJa: "質問に 即座に 答えた。", exampleKo: "질문에 즉각 답했다.", tags: ["2019"] },
+      { id: "darashinai-2019u", kanji: "だらしない", meaningKo: "단정하지 않다, 칠칠치 못하다", exampleJa: "服装が だらしない。", exampleKo: "복장이 단정하지 못하다.", tags: ["2019"] },
+      { id: "tokushu-2019u", kanji: "特殊", kana: "とくしゅ", meaningKo: "특수", exampleJa: "特殊な 技術が 必要だ。", exampleKo: "특수한 기술이 필요하다.", tags: ["2019"] },
+      { id: "juuman-2019u", kanji: "充満", kana: "じゅうまん", meaningKo: "충만, 가득함", exampleJa: "部屋に 煙が 充満した。", exampleKo: "방에 연기가 가득 찼다.", tags: ["2019"] },
+      { id: "sozai-2019u", kanji: "素材", kana: "そざい", meaningKo: "소재", exampleJa: "天然の 素材を 使う。", exampleKo: "천연 소재를 사용한다.", tags: ["2019"] },
+      { id: "haishi-2019u", kanji: "廃止", kana: "はいし", meaningKo: "폐지", exampleJa: "その 路線は 廃止された。", exampleKo: "그 노선은 폐지됐다.", tags: ["2019"] },
+      { id: "shoho-2019u", kanji: "初歩", kana: "しょほ", meaningKo: "초보", exampleJa: "まだ 初歩の 段階だ。", exampleKo: "아직 초보 단계다.", tags: ["2019"] },
+      { id: "tsukiru-2019u", kanji: "尽きる", kana: "つきる", meaningKo: "다하다, 떨어지다, 끝나다", exampleJa: "話題が 尽きない。", exampleKo: "화제가 끊이지 않는다.", tags: ["2019"] },
+      { id: "mekuru-2019u", kanji: "めくる", meaningKo: "(책장) 넘기다", exampleJa: "ページを めくる。", exampleKo: "페이지를 넘긴다.", tags: ["2019"] },
+
+      { id: "enzetsu-2018u", kanji: "演説", kana: "えんぜつ", meaningKo: "연설", exampleJa: "候補者が 街頭で 演説する。", exampleKo: "후보자가 거리에서 연설한다.", tags: ["2018"] },
+      { id: "tasai-2018u", kanji: "多彩", kana: "たさい", meaningKo: "다채로움", exampleJa: "多彩な 才能を 持つ。", exampleKo: "다채로운 재능을 가지고 있다.", tags: ["2018"] },
+      { id: "noritsugu-2018u", kanji: "乗り継ぐ", kana: "のりつぐ", meaningKo: "갈아타다", exampleJa: "バスを 乗り継いで 行く。", exampleKo: "버스를 갈아타고 간다.", tags: ["2018"] },
+      { id: "yakume-2018u", kanji: "役目", kana: "やくめ", meaningKo: "역할", exampleJa: "自分の 役目を 果たす。", exampleKo: "자신의 역할을 다한다.", tags: ["2018"] },
+      { id: "kaiyaku-2018u", kanji: "解約", kana: "かいやく", meaningKo: "해약, 해지", exampleJa: "保険を 解約した。", exampleKo: "보험을 해지했다.", tags: ["2018"] },
+      { id: "nikka-2018u", kanji: "日課", kana: "にっか", meaningKo: "일과", exampleJa: "散歩が 毎朝の 日課だ。", exampleKo: "산책이 매일 아침 일과다.", tags: ["2018"] },
+      { id: "hozon-2018u", kanji: "保存", kana: "ほぞん", meaningKo: "보존, 저장", exampleJa: "データを 保存する。", exampleKo: "데이터를 저장한다.", tags: ["2018"] },
+      { id: "kippari-2018u", kanji: "きっぱり", meaningKo: "딱 잘라, 단호히", exampleJa: "誘いを きっぱり 断った。", exampleKo: "권유를 딱 잘라 거절했다.", tags: ["2018"] },
+      { id: "nibui-2018u", kanji: "鈍い", kana: "にぶい", meaningKo: "둔하다, 굼뜨다, 반응이 느리다", exampleJa: "動きが 鈍い。", exampleKo: "움직임이 둔하다.", tags: ["2018"] },
+      { id: "moyori-2018u", kanji: "最寄り", kana: "もより", meaningKo: "가장 가까움, 근처", exampleJa: "最寄りの 駅まで 歩く。", exampleKo: "가장 가까운 역까지 걷는다.", tags: ["2018"] },
+
+      { id: "isseini-2017u", kanji: "一斉に", kana: "いっせいに", meaningKo: "일제히, 동시에", exampleJa: "全員が 一斉に 立ち上がった。", exampleKo: "전원이 일제히 일어섰다.", tags: ["2017"] },
+      { id: "setsuyaku-2017u", kanji: "節約", kana: "せつやく", meaningKo: "절약", exampleJa: "水道代を 節約する。", exampleKo: "수도세를 절약한다.", tags: ["2017"] },
+      { id: "bunkai-2017u", kanji: "分解", kana: "ぶんかい", meaningKo: "분해", exampleJa: "機械を 分解して 修理する。", exampleKo: "기계를 분해해서 수리한다.", tags: ["2017"] },
+      { id: "ronsou-2017u", kanji: "論争", kana: "ろんそう", meaningKo: "논쟁", exampleJa: "二人の 意見が 論争に なった。", exampleKo: "두 사람의 의견이 논쟁이 됐다.", tags: ["2017"] },
+      { id: "oou-2017u", kanji: "覆う", kana: "おおう", meaningKo: "덮다, 씌우다", exampleJa: "雪が 山を 覆う。", exampleKo: "눈이 산을 덮는다.", tags: ["2017"] },
+      { id: "choujou-2017u", kanji: "頂上", kana: "ちょうじょう", meaningKo: "정상", exampleJa: "山の 頂上に 着いた。", exampleKo: "산 정상에 도착했다.", tags: ["2017"] },
+      { id: "yabureru-2017u", kanji: "破れる", kana: "やぶれる", meaningKo: "찢어지다", exampleJa: "紙が 破れた。", exampleKo: "종이가 찢어졌다.", tags: ["2017"] },
+      { id: "gentei-2017u", kanji: "限定", kana: "げんてい", meaningKo: "한정", exampleJa: "数量 限定の 商品だ。", exampleKo: "수량 한정 상품이다.", tags: ["2017"] },
+      { id: "chirakasu-2017u", kanji: "散らかす", kana: "ちらかす", meaningKo: "어지르다", exampleJa: "部屋を 散らかす。", exampleKo: "방을 어지른다.", tags: ["2017"] },
+      { id: "ryakusu-2017u", kanji: "略す", kana: "りゃくす", meaningKo: "줄이다, 생략하다", exampleJa: "説明を 略す。", exampleKo: "설명을 생략한다.", tags: ["2017"] },
+
+      { id: "intai-2016u", kanji: "引退", kana: "いんたい", meaningKo: "은퇴", exampleJa: "監督が 今季で 引退する。", exampleKo: "감독이 이번 시즌으로 은퇴한다.", tags: ["2016"] },
+      { id: "kikkake-2016u", kanji: "きっかけ", meaningKo: "계기", exampleJa: "留学が 成長の きっかけに なった。", exampleKo: "유학이 성장의 계기가 됐다.", tags: ["2016"] },
+      { id: "shoujiru-2016u", kanji: "生じる", kana: "しょうじる", meaningKo: "발생하다, 생기다", exampleJa: "問題が 生じた。", exampleKo: "문제가 발생했다.", tags: ["2016"] },
+      { id: "meue-2016u", kanji: "目上", kana: "めうえ", meaningKo: "윗사람, 연장자", exampleJa: "目上の 人には 敬語を 使う。", exampleKo: "윗사람에게는 존댓말을 쓴다.", tags: ["2016"] },
+      { id: "enchou-2016u", kanji: "延長", kana: "えんちょう", meaningKo: "연장", exampleJa: "会議が 一時間 延長された。", exampleKo: "회의가 한 시간 연장됐다.", tags: ["2016"] },
+      { id: "sabiru-2016u", kanji: "さびる", meaningKo: "녹슬다", exampleJa: "古い 釘が さびている。", exampleKo: "오래된 못이 녹슬어 있다.", tags: ["2016"] },
+      { id: "hattatsu-2016u", kanji: "発達", kana: "はったつ", meaningKo: "발달", exampleJa: "科学技術が 発達する。", exampleKo: "과학기술이 발달한다.", tags: ["2016"] },
+      { id: "oogesa-2016u", kanji: "大げさ", kana: "おおげさ", meaningKo: "과장됨", exampleJa: "話を 大げさに 言う。", exampleKo: "이야기를 과장해서 말한다.", tags: ["2016"] },
+      { id: "junchou-2016u", kanji: "順調", kana: "じゅんちょう", meaningKo: "순조로움", exampleJa: "準備は 順調に 進んでいる。", exampleKo: "준비는 순조롭게 진행되고 있다.", tags: ["2016"] },
+      { id: "hansei-2016u", kanji: "反省", kana: "はんせい", meaningKo: "반성", exampleJa: "失敗を 反省する。", exampleKo: "실패를 반성한다.", tags: ["2016"] }
     ]
   }
 ];
