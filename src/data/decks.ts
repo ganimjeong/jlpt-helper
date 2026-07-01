@@ -2988,5 +2988,79 @@ export const decks: VocabularyDeck[] = [
       { id: "shoujou-2016", kanji: "症状", kana: "しょうじょう", meaningKo: "증상, 증세", exampleJa: "風邪の 症状が 出てきた。", exampleKo: "감기 증상이 나타났다.", tags: ["2016"] },
       { id: "maneku-2016", kanji: "招く", kana: "まねく", meaningKo: "초대하다, 부르다, 초래하다", exampleJa: "友人を 家に 招く。", exampleKo: "친구를 집에 초대한다.", tags: ["2016"] }
     ]
+  },
+  {
+    id: "word-formation-past-2016-2023",
+    title: "단어형성2023~2016",
+    description: "2023년부터 2016년까지 연도별 단어형성(파생·복합어) 기출어휘.",
+    sourceBatch: "word-formation-past-2026-07-01",
+    jlptLevel: "N2",
+    quizStyle: "reading",
+    createdAt: "2026-07-01",
+    updatedAt: "2026-07-01",
+    words: [
+      { id: "kabegiwa-2023", kanji: "壁際", kana: "かべぎわ", meaningKo: "벽가, 벽 옆", exampleJa: "壁際に 本棚を 置いた。", exampleKo: "벽가에 책장을 두었다.", tags: ["2023"] },
+      { id: "nihonfuu-2023", kanji: "日本風", kana: "にほんふう", meaningKo: "일본풍", exampleJa: "日本風の 部屋に 泊まった。", exampleKo: "일본풍 방에 묵었다.", tags: ["2023"] },
+      { id: "shotetsuzuki-2023", kanji: "諸手続き", kana: "しょてつづき", meaningKo: "여러 절차", exampleJa: "入学の 諸手続きを 済ませた。", exampleKo: "입학의 여러 절차를 마쳤다.", tags: ["2023"] },
+      { id: "futarizure-2023", kanji: "二人連れ", kana: "ふたりづれ", meaningKo: "동행한 두 사람", exampleJa: "二人連れの 客が 店に 入ってきた。", exampleKo: "동행한 두 손님이 가게에 들어왔다.", tags: ["2023"] },
+      { id: "teikoushin-2023", kanji: "抵抗心", kana: "ていこうしん", meaningKo: "저항심", exampleJa: "命令に 抵抗心を 感じる。", exampleKo: "명령에 저항심을 느낀다.", tags: ["2023"] },
+      { id: "mukaitou-2023", kanji: "無回答", kana: "むかいとう", meaningKo: "무응답", exampleJa: "質問の 半分が 無回答だった。", exampleKo: "질문의 절반이 무응답이었다.", tags: ["2023"] },
+
+      { id: "ibunya-2022", kanji: "異分野", kana: "いぶんや", meaningKo: "이분야, 다른 분야", exampleJa: "異分野の 専門家と 協力する。", exampleKo: "다른 분야의 전문가와 협력한다.", tags: ["2022"] },
+      { id: "shashintsuki-2022", kanji: "写真付き", kana: "しゃしんつき", meaningKo: "사진 포함", exampleJa: "写真付きの 記事を 投稿した。", exampleKo: "사진이 포함된 기사를 올렸다.", tags: ["2022"] },
+      { id: "kidantai-2022", kanji: "貴団体", kana: "きだんたい", meaningKo: "귀 단체", exampleJa: "貴団体の 活動に 感謝します。", exampleKo: "귀 단체의 활동에 감사드립니다.", tags: ["2022"] },
+      { id: "teikakaku-2022", kanji: "低価格", kana: "ていかかく", meaningKo: "낮은 가격", exampleJa: "この 店は 低価格で 人気だ。", exampleKo: "이 가게는 낮은 가격으로 인기다.", tags: ["2022"] },
+      { id: "genseido-2022", kanji: "現制度", kana: "げんせいど", meaningKo: "현 제도", exampleJa: "現制度には 問題が 多い。", exampleKo: "현 제도에는 문제가 많다.", tags: ["2022"] },
+      { id: "youjinbukai-2022", kanji: "用心深い", kana: "ようじんぶかい", meaningKo: "신중하다", exampleJa: "彼は 用心深い 性格だ。", exampleKo: "그는 신중한 성격이다.", tags: ["2022"] },
+
+      { id: "karitouroku-2021", kanji: "仮登録", kana: "かりとうろく", meaningKo: "임시 등록", exampleJa: "まず 仮登録を 済ませて ください。", exampleKo: "우선 임시 등록을 마쳐 주세요.", tags: ["2021"] },
+      { id: "douiken-2021", kanji: "同意見", kana: "どういけん", meaningKo: "같은 의견", exampleJa: "私も 彼と 同意見だ。", exampleKo: "나도 그와 같은 의견이다.", tags: ["2021"] },
+      { id: "genshachou-2021", kanji: "現社長", kana: "げんしゃちょう", meaningKo: "현 사장", exampleJa: "現社長は 十年 会社を 率いている。", exampleKo: "현 사장은 10년간 회사를 이끌고 있다.", tags: ["2021"] },
+      { id: "betsukaijou-2021", kanji: "別会場", kana: "べつかいじょう", meaningKo: "다른 회장", exampleJa: "受付は 別会場で 行う。", exampleKo: "접수는 다른 회장에서 진행한다.", tags: ["2021"] },
+      { id: "tabegoro-2021", kanji: "食べ頃", kana: "たべごろ", meaningKo: "먹기에 적당한 때", exampleJa: "この 桃は 今が 食べ頃だ。", exampleKo: "이 복숭아는 지금이 먹기에 적당한 때다.", tags: ["2021"] },
+      { id: "boorujou-2021", kanji: "ボール状", kana: "ボールじょう", meaningKo: "공 형태, 둥근 모양", exampleJa: "生地を ボール状に 丸める。", exampleKo: "반죽을 공 모양으로 둥글린다.", tags: ["2021"] },
+
+      { id: "saiteishutsu-2020", kanji: "再提出", kana: "さいていしゅつ", meaningKo: "재제출", exampleJa: "書類を 修正して 再提出した。", exampleKo: "서류를 수정해서 재제출했다.", tags: ["2020"] },
+      { id: "tokaisodachi-2020", kanji: "都会育ち", kana: "とかいそだち", meaningKo: "도시에서 자람", exampleJa: "彼女は 都会育ちだ。", exampleKo: "그녀는 도시에서 자랐다.", tags: ["2020"] },
+      { id: "hitoshigoto-2020", kanji: "一仕事", kana: "ひとしごと", meaningKo: "조금 일을 함", exampleJa: "朝の うちに 一仕事 終えた。", exampleKo: "아침 사이에 일을 한바탕 끝냈다.", tags: ["2020"] },
+
+      { id: "akueikyou-2019", kanji: "悪影響", kana: "あくえいきょう", meaningKo: "악영향", exampleJa: "睡眠不足は 健康に 悪影響を 与える。", exampleKo: "수면 부족은 건강에 악영향을 준다.", tags: ["2019"] },
+      { id: "zenchouchou-2019", kanji: "前町長", kana: "ぜんちょうちょう", meaningKo: "전 마을(정) 대표", exampleJa: "前町長が 式に 出席した。", exampleKo: "전 정장(마을 대표)이 식에 참석했다.", tags: ["2019"] },
+      { id: "amerikaryuu-2019", kanji: "アメリカ流", kana: "アメリカりゅう", meaningKo: "미국식", exampleJa: "アメリカ流の 経営を 取り入れる。", exampleKo: "미국식 경영을 도입한다.", tags: ["2019"] },
+      { id: "tanomizurai-2019", kanji: "頼みづらい", kana: "たのみづらい", meaningKo: "부탁하기 곤란하다", exampleJa: "忙しそうで 頼みづらい。", exampleKo: "바빠 보여서 부탁하기 곤란하다.", tags: ["2019"] },
+      { id: "seijishoku-2019", kanji: "政治色", kana: "せいじしょく", meaningKo: "정치색", exampleJa: "政治色の 強い 発言だった。", exampleKo: "정치색이 강한 발언이었다.", tags: ["2019"] },
+      { id: "wakaregiwa-2019", kanji: "別れ際", kana: "わかれぎわ", meaningKo: "헤어질 때", exampleJa: "別れ際に 彼は 笑った。", exampleKo: "헤어질 때 그는 웃었다.", tags: ["2019"] },
+
+      { id: "gakunenbetsu-2018", kanji: "学年別", kana: "がくねんべつ", meaningKo: "학년별", exampleJa: "学年別に 教室を 分ける。", exampleKo: "학년별로 교실을 나눈다.", tags: ["2018"] },
+      { id: "soushinmoto-2018", kanji: "送信元", kana: "そうしんもと", meaningKo: "송신인, 발신지", exampleJa: "メールの 送信元を 確認する。", exampleKo: "메일의 발신지를 확인한다.", tags: ["2018"] },
+      { id: "mukeikaku-2018", kanji: "無計画", kana: "むけいかく", meaningKo: "무계획", exampleJa: "無計画な 旅行も 楽しい。", exampleKo: "무계획한 여행도 즐겁다.", tags: ["2018"] },
+      { id: "shingakuritsu-2018", kanji: "進学率", kana: "しんがくりつ", meaningKo: "진학률", exampleJa: "この 高校は 進学率が 高い。", exampleKo: "이 고교는 진학률이 높다.", tags: ["2018"] },
+      { id: "hatarakite-2018", kanji: "働き手", kana: "はたらきて", meaningKo: "일꾼, 일손", exampleJa: "農村では 働き手が 足りない。", exampleKo: "농촌에서는 일손이 부족하다.", tags: ["2018"] },
+      { id: "raigakki-2018", kanji: "来学期", kana: "らいがっき", meaningKo: "다음 학기", exampleJa: "来学期から 新しい 授業が 始まる。", exampleKo: "다음 학기부터 새 수업이 시작된다.", tags: ["2018"] },
+      { id: "sukiijou-2018", kanji: "スキー場", kana: "スキーじょう", meaningKo: "스키장", exampleJa: "冬に 家族で スキー場へ 行く。", exampleKo: "겨울에 가족과 스키장에 간다.", tags: ["2018"] },
+      { id: "fukudaijin-2018", kanji: "副大臣", kana: "ふくだいじん", meaningKo: "부대신, 부장관", exampleJa: "副大臣が 会見を 開いた。", exampleKo: "부장관이 회견을 열었다.", tags: ["2018"] },
+
+      { id: "kaiinsei-2017", kanji: "会員制", kana: "かいいんせい", meaningKo: "회원제", exampleJa: "この クラブは 会員制だ。", exampleKo: "이 클럽은 회원제다.", tags: ["2017"] },
+      { id: "juutakugai-2017", kanji: "住宅街", kana: "じゅうたくがい", meaningKo: "주택가", exampleJa: "静かな 住宅街に 住んでいる。", exampleKo: "조용한 주택가에 살고 있다.", tags: ["2017"] },
+      { id: "zenshachou-2017", kanji: "前社長", kana: "ぜんしゃちょう", meaningKo: "전 사장", exampleJa: "前社長が 会社を 設立した。", exampleKo: "전 사장이 회사를 설립했다.", tags: ["2017"] },
+      { id: "maushiro-2017", kanji: "真後ろ", kana: "まうしろ", meaningKo: "바로 뒤", exampleJa: "私の 真後ろに 彼が 座った。", exampleKo: "내 바로 뒤에 그가 앉았다.", tags: ["2017"] },
+      { id: "kaishainfuu-2017", kanji: "会社員風", kana: "かいしゃいんふう", meaningKo: "회사원 같음, 회사원풍", exampleJa: "会社員風の 男性が 現れた。", exampleKo: "회사원 같은 남성이 나타났다.", tags: ["2017"] },
+      { id: "shogaikoku-2017", kanji: "諸外国", kana: "しょがいこく", meaningKo: "여러 외국", exampleJa: "諸外国の 例を 参考に する。", exampleKo: "여러 외국의 사례를 참고한다.", tags: ["2017"] },
+      { id: "teikarorii-2017", kanji: "低カロリー", kana: "ていカロリー", meaningKo: "저칼로리", exampleJa: "低カロリーの 食事を 選ぶ。", exampleKo: "저칼로리 식사를 고른다.", tags: ["2017"] },
+      { id: "kazokuzure-2017", kanji: "家族連れ", kana: "かぞくづれ", meaningKo: "가족 동반", exampleJa: "公園は 家族連れで にぎわう。", exampleKo: "공원은 가족 동반객으로 붐빈다.", tags: ["2017"] },
+      { id: "shonendo-2017", kanji: "初年度", kana: "しょねんど", meaningKo: "초년도, 첫 해", exampleJa: "初年度の 売り上げは 好調だ。", exampleKo: "첫 해 매출은 호조다.", tags: ["2017"] },
+      { id: "fuseikaku-2017", kanji: "不正確", kana: "ふせいかく", meaningKo: "부정확함", exampleJa: "不正確な 情報を 流しては いけない。", exampleKo: "부정확한 정보를 흘려서는 안 된다.", tags: ["2017"] },
+
+      { id: "ibunka-2016", kanji: "異文化", kana: "いぶんか", meaningKo: "이문화", exampleJa: "異文化の 交流を 深める。", exampleKo: "이문화 교류를 깊게 한다.", tags: ["2016"] },
+      { id: "kousuijun-2016", kanji: "高水準", kana: "こうすいじゅん", meaningKo: "높은 수준", exampleJa: "この 製品は 高水準の 品質だ。", exampleKo: "이 제품은 높은 수준의 품질이다.", tags: ["2016"] },
+      { id: "nihonshiki-2016", kanji: "日本式", kana: "にほんしき", meaningKo: "일본식", exampleJa: "日本式の 挨拶を 学ぶ。", exampleKo: "일본식 인사를 배운다.", tags: ["2016"] },
+      { id: "mishiyou-2016", kanji: "未使用", kana: "みしよう", meaningKo: "미사용", exampleJa: "未使用の 切手を 集める。", exampleKo: "미사용 우표를 모은다.", tags: ["2016"] },
+      { id: "kekkonkan-2016", kanji: "結婚観", kana: "けっこんかん", meaningKo: "결혼관", exampleJa: "世代で 結婚観が 異なる。", exampleKo: "세대별로 결혼관이 다르다.", tags: ["2016"] },
+      { id: "shuseibun-2016", kanji: "主成分", kana: "しゅせいぶん", meaningKo: "주성분", exampleJa: "この 薬の 主成分は 何ですか。", exampleKo: "이 약의 주성분은 무엇입니까.", tags: ["2016"] },
+      { id: "benkyouzuke-2016", kanji: "勉強漬け", kana: "べんきょうづけ", meaningKo: "공부에 열중임", exampleJa: "受験生は 毎日 勉強漬けだ。", exampleKo: "수험생은 매일 공부에 파묻혀 있다.", tags: ["2016"] },
+      { id: "kanrika-2016", kanji: "管理下", kana: "かんりか", meaningKo: "관리하", exampleJa: "工事は 専門家の 管理下で 進む。", exampleKo: "공사는 전문가의 관리하에 진행된다.", tags: ["2016"] },
+      { id: "saikaihatsu-2016", kanji: "再開発", kana: "さいかいはつ", meaningKo: "재개발", exampleJa: "駅前の 再開発が 始まった。", exampleKo: "역 앞 재개발이 시작되었다.", tags: ["2016"] },
+      { id: "nendaijun-2016", kanji: "年代順", kana: "ねんだいじゅん", meaningKo: "연대순", exampleJa: "写真を 年代順に 並べる。", exampleKo: "사진을 연대순으로 배열한다.", tags: ["2016"] }
+    ]
   }
 ];
