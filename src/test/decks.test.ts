@@ -17,13 +17,20 @@ describe("vocabulary decks", () => {
     }
   });
 
-  it("includes Korean meanings and example translations", () => {
+  it("includes Korean meanings plus either an example or a synonym", () => {
     for (const deck of decks) {
       for (const word of deck.words) {
         expect(word.kanji.length).toBeGreaterThan(0);
         expect(word.meaningKo.length).toBeGreaterThan(0);
-        expect(word.exampleJa.length).toBeGreaterThan(0);
-        expect(word.exampleKo?.length).toBeGreaterThan(0);
+
+        if (word.synonymJa) {
+          // 言い換え類義 (synonym) decks carry a synonym pair instead of an example.
+          expect(word.synonymJa.length).toBeGreaterThan(0);
+          expect(word.synonymKo?.length ?? 0).toBeGreaterThan(0);
+        } else {
+          expect(word.exampleJa?.length ?? 0).toBeGreaterThan(0);
+          expect(word.exampleKo?.length ?? 0).toBeGreaterThan(0);
+        }
       }
     }
   });

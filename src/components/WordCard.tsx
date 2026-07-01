@@ -7,13 +7,14 @@ type WordCardProps = {
   onResolve: (memorized: boolean) => void;
 };
 
-type RevealStep = "kanji" | "kana" | "example" | "meaning";
+type RevealStep = "kanji" | "kana" | "example" | "meaning" | "synonym";
 
 const stepLabels: Record<RevealStep, string> = {
   kanji: "표기",
   kana: "읽기",
   example: "예문",
-  meaning: "뜻"
+  meaning: "뜻",
+  synonym: "유의어"
 };
 
 export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardProps) {
@@ -30,8 +31,18 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
   // 表記 (writing) decks mimic JLPT 問題2: the kana reading is the prompt and
   // the kanji is revealed as the answer, so kana comes first.
   const isWriting = quizStyle === "writing" && hasKana;
+  // 言い換え類義 (synonym) decks reveal a near-synonym as the answer (問題5).
+  const isSynonym = quizStyle === "synonym" && Boolean(word.synonymJa);
 
   const steps = useMemo<RevealStep[]>(() => {
+    if (isSynonym) {
+      const next: RevealStep[] = ["kanji"];
+      if (hasKana) {
+        next.push("kana");
+      }
+      next.push("meaning", "synonym");
+      return next;
+    }
     if (isWriting) {
       return ["kana", "kanji", "example", "meaning"];
     }
@@ -41,7 +52,10 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
     }
     next.push("example", "meaning");
     return next;
-  }, [isWriting, hasKana]);
+  }, [isSynonym, isWriting, hasKana]);
+
+  const seen = (step: RevealStep) =>
+    steps.includes(step) && stepIndex >= steps.indexOf(step);
 
   const currentStep = steps[stepIndex];
   const isFinalStep = stepIndex === steps.length - 1;
@@ -191,20 +205,27 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
             </>
           )}
 
-          {(currentStep === "example" || currentStep === "meaning") && (
+          {seen("example") && word.exampleJa ? (
             <span className="example-block">
               <span className="word-example-ja">{word.exampleJa}</span>
-              {currentStep === "meaning" && word.exampleKo ? (
+              {seen("meaning") && word.exampleKo ? (
                 <small>{word.exampleKo}</small>
               ) : null}
             </span>
-          )}
+          ) : null}
 
-          {currentStep === "meaning" && (
+          {seen("meaning") ? (
             <span className="meaning-block">
               <span>{word.meaningKo}</span>
             </span>
-          )}
+          ) : null}
+
+          {seen("synonym") && word.synonymJa ? (
+            <span className="synonym-block">
+              <span className="word-synonym">≒ {word.synonymJa}</span>
+              {word.synonymKo ? <small>{word.synonymKo}</small> : null}
+            </span>
+          ) : null}
         </span>
       </button>
 
