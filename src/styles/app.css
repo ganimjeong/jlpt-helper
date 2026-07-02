@@ -312,6 +312,65 @@ button:disabled,
   gap: 12px;
 }
 
+/* 카드 좌우 바깥 배경의 판정 힌트 아이콘. 화면 폭이 넓을 때(주로 데스크톱)
+   앱 셸(560px) 바깥 여백에 연한 색으로 표시된다. */
+.side-cue {
+  position: fixed;
+  top: 50%;
+  z-index: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.32;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.side-cue-forgot {
+  left: max(24px, calc(50% - 280px - 128px));
+  color: #c46a3a;
+}
+
+.side-cue-known {
+  right: max(24px, calc(50% - 280px - 128px));
+  color: #1f6f55;
+}
+
+.side-cue-icon {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border: 3px solid currentColor;
+  border-radius: 999px;
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.side-cue-label {
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.side-cue-active {
+  opacity: 0.9;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* 카드/아이콘을 나란히 놓을 공간이 있는 넓은 화면에서만 노출 */
+@media (min-width: 900px) {
+  .side-cue {
+    display: flex;
+  }
+}
+
 .word-card {
   display: grid;
   grid-template-rows: auto 1fr;

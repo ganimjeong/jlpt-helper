@@ -100,9 +100,48 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
     }
   }
 
+  // 키보드 조작: 스페이스/엔터로 다음 정보 공개, 방향키로 판정.
+  // 카드에 포커스가 없어도 동작하도록 전역 리스너로 처리한다.
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.metaKey || event.ctrlKey || event.altKey) {
+        return;
+      }
+      if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        revealNext();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        resolve(true);
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        resolve(false);
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // isFinalStep은 revealNext, exitDirection은 resolve의 가드에 사용된다.
+  }, [isFinalStep, exitDirection, onResolve]);
+
   return (
     <div className="study-card-area">
-      <button
+      <div
+        className={dragX < -32 ? "side-cue side-cue-forgot side-cue-active" : "side-cue side-cue-forgot"}
+        aria-hidden="true"
+      >
+        <span className="side-cue-icon">✕</span>
+        <span className="side-cue-label">못외웠음</span>
+      </div>
+      <div
+        className={dragX > 32 ? "side-cue side-cue-known side-cue-active" : "side-cue side-cue-known"}
+        aria-hidden="true"
+      >
+        <span className="side-cue-icon">✓</span>
+        <span className="side-cue-label">외웠음</span>
+      </div>
+
+      <div
         className={[
           "word-card",
           nudge ? "word-card-nudge" : "",
@@ -112,7 +151,8 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
           .filter(Boolean)
           .join(" ")}
         key={word.id}
-        type="button"
+        role="button"
+        tabIndex={0}
         onClick={(event) => {
           if (draggedRef.current) {
             event.preventDefault();
@@ -120,12 +160,6 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
             return;
           }
           revealNext();
-        }}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            revealNext();
-          }
         }}
         onPointerDown={(event) => {
           if (exitDirection) {
@@ -227,7 +261,7 @@ export function WordCard({ word, quizStyle = "reading", onResolve }: WordCardPro
             </span>
           ) : null}
         </span>
-      </button>
+      </div>
 
       <div className="swipe-hints" aria-hidden="true">
         <span className={dragX < -32 ? "hint-active hint-forget" : "hint-forget"}>
